@@ -1,0 +1,49 @@
+Each module has a specific purpose in the MVC (Model-View-Controller) architecture.
+
+### 1. `app.js`
+- **Purpose**: This is the main file that starts your application.
+- **Functionality**: It sets up the Express server, configures middleware (like body-parser and static file serving), and defines the routes for handling requests.
+
+### 2. `controllers/productController.js`
+- **Purpose**: The controller handles the logic for managing product-related requests.
+- **Functionality**: 
+  - **getProducts**: This function retrieves the list of products and renders the product view.
+  - **getHomePage**: This function renders the home page view.
+
+### 3. `models/productModel.js`
+- **Purpose**: This module defines the data structure and provides functions to access product data.
+- **Functionality**: 
+  - It contains an array of products and provides a function (`getAllProducts`) to return the list of products.
+
+### 4. `views/`
+This directory contains EJS (Embedded JavaScript) template files that are rendered as HTML. 
+
+#### - `views/index.ejs`
+- **Purpose**: This is the home page of the application.
+- **Functionality**: It displays a welcome message and a link to view products.
+
+#### - `views/products.ejs`
+- **Purpose**: This page displays the list of products.
+- **Functionality**: It iterates through the list of products and shows each product's name and price.
+
+### 5. `public/`
+This directory is used for serving static files like CSS, JavaScript, and images.
+
+#### - `public/styles.css`
+- **Purpose**: This file contains the styles for the application.
+- **Functionality**: It styles the elements on the HTML pages, like the body, headers, and product list.
+
+### 6. `routes/productRoutes.js`
+- **Purpose**: This module defines the routes related to products.
+- **Functionality**: 
+  - It maps HTTP GET requests for the home page (`/`) and the products page (`/products`) to their respective controller functions.
+
+### Summary
+- **Model** (`models/productModel.js`): Handles data and logic related to products.
+- **View** (`views/*.ejs`): Renders HTML pages that users see in their browsers.
+- **Controller** (`controllers/productController.js`): Manages the flow between the model and the view, handling requests and responses.
+- **Routes** (`routes/*.js`): Defines the paths for accessing different parts of the application.
+- **Static Files** (`public/`): Contains files like CSS to style the website.
+
+### Conclusion
+Each module plays a distinct role in the application, allowing for a clean separation of concerns. This structure helps keep the code organized, making it easier to manage, maintain, and scale the application as needed. If you have any specific questions about any of the modules, feel free to ask!
